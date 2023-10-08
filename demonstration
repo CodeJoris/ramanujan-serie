@@ -1,0 +1,33 @@
+def suite(nombre_de_tests):
+    x=1
+    y=2
+    b=5
+
+    a=1
+    
+    liste_x=[1+(2*i) for i in range(1, nombre_de_tests*2+1)]
+    liste_y=[2+(2*i) for i in range(1, nombre_de_tests*2+1)]
+    z=10
+    for i in range(0,nombre_de_tests*2,2):
+        
+        a-=b*((x/y)**3)
+        
+        b+=4
+        x*=liste_x[i]
+        y*=liste_y[i]
+        
+        a+=b*((x/y)**3)
+        
+        b+=4
+        x*=liste_x[i+1]
+        y*=liste_y[i+1]
+        if i == z:
+            print("apres "+str(z)+' tests : '+str(a))
+            z*=10
+    print("apres "+str(nombre_de_tests)+' tests : '+str(a))
+    
+from math import pi
+suite(20000)
+print('La suite tend vers: ' + str(2/pi))
+
+  
